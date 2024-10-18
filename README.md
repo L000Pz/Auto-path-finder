@@ -1,6 +1,6 @@
 # 🚗 Automatic path finder using AI algorithms
 
-This project implements several search algorithms for finding the optimal path between cities in a graph-based road network. The project is inspired by the famous "Arad to Bucharest" pathfinding problem and includes both uninformed and informed search strategies, such as **A\*** and **Greedy search**, with custom heuristic functions.Here's the inspired map:
+This project implements several search algorithms for finding the optimal path between cities in a graph-based road network. The project is inspired by the famous "Arad to Bucharest" pathfinding problem and includes both uninformed and informed search strategies, such as **A\*** and **Greedy search**, with custom heuristic functions. Here's the inspired map:
 ![romaina map!](https://drive.google.com/uc?export=view&id=1L7OYcULvMzUGRsYQJYsws0t3osxkq40o)
 
 ## 🗺️ Features
