@@ -69,11 +69,11 @@ graph.add_edge("Iasi", "Neamt", 87)
 
 
 
-# پارامترهای ورودی
+
 start_city = "Arad"
 goal_city = "Bucharest"
 
-# اجرای الگوریتم‌ها و گزارش نتایج
+
 algorithms = [bfs, dfs, ucs, dls, a_star, greedy_search]
 for algorithm in algorithms:
     if algorithm == dls:
