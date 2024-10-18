@@ -1,4 +1,22 @@
 def dfs(graph, start, goal):
+    """
+    Depth-first search (DFS) algorithm to find a path from the start node to the goal node.
+
+    This implementation keeps track of the cumulative distance traveled to reach each node
+    and uses a stack for backtracking.
+
+    Parameters:
+    - graph: The graph representation.
+    - start: The starting node (city).
+    - goal: The goal node (city).
+
+    Returns:
+    - A tuple containing:
+      - A list representing the path taken from start to goal.
+      - An integer representing the total distance (cost) to reach the goal.
+      - An integer representing the total number of nodes visited during the search.
+      If no path is found, it returns (None, 0, node_count).
+    """
     stack = [[(start, 0)]]  # Stack now holds tuples (node, cumulative_distance)
     visited = set()
     node_count = 0
@@ -25,4 +43,3 @@ def dfs(graph, start, goal):
         visited.add(node)
 
     return None, 0, node_count  # If no path is found, return 0 distance
-

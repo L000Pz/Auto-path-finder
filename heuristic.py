@@ -1,4 +1,18 @@
 def heuristic(city, goal):
+    """
+    Estimate the straight-line distance from a given city to the goal city.
+
+    This heuristic is used in search algorithms to prioritize nodes based on their estimated cost
+    to reach the goal. It uses pre-defined straight-line distances to the goal city.
+
+    Parameters:
+    - city: The current city for which the heuristic is being calculated.
+    - goal: The goal city (not used in this heuristic, but included for consistency with algorithm signatures).
+
+    Returns:
+    - An integer representing the estimated straight-line distance from the current city to the goal city.
+      If the city is not found in the predefined distances, it returns 0.
+    """
     straight_line_distances = {
         "Arad": 366,
         "Bucharest": 0,
