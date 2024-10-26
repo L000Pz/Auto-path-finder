@@ -7,18 +7,19 @@ from heuristic import heuristic
 from ucs import ucs
 from greedy import greedy_search
 
+
 class Graph:
     """
     Represents a graph using an adjacency list.
 
     Attributes:
         graph (dict): A dictionary where the keys are nodes (cities) 
-                      and the values are lists of tuples (neighbor, distance).
+        and the values are lists of tuples (neighbor, distance).
     """
 
     def __init__(self):
         self.graph = {}
-    
+
     def add_edge(self, city1, city2, distance):
         """
         Adds an edge between two cities with the given distance.
@@ -48,6 +49,7 @@ class Graph:
         """
         return self.graph[city] if city in self.graph else []
 
+
 def measure_algorithm(algorithm, graph, start, goal, heuristic=None):
     """
     Measures the time taken to execute a pathfinding algorithm.
@@ -73,6 +75,7 @@ def measure_algorithm(algorithm, graph, start, goal, heuristic=None):
 
     time_taken = time.time() - start_time
     return result, time_taken
+
 
 # Construct the graph with the cities and distances
 graph = Graph()
@@ -114,18 +117,23 @@ goal_city = "Bucharest"
 algorithms = [bfs, dfs, ucs, dls, a_star, greedy_search]
 for algorithm in algorithms:
     if algorithm == dls:
-        result, time_taken = measure_algorithm(algorithm, graph, start_city, goal_city, 3)  # Depth limit for DLS
+        result, time_taken = measure_algorithm(
+            algorithm, graph, start_city, goal_city, 3)  # Depth limit for DLS
     elif algorithm in [a_star, greedy_search]:
-        result, time_taken = measure_algorithm(algorithm, graph, start_city, goal_city, heuristic)  # Pass heuristic
+        result, time_taken = measure_algorithm(
+            algorithm, graph, start_city, goal_city, heuristic)  # Pass heuristic
     else:
-        result, time_taken = measure_algorithm(algorithm, graph, start_city, goal_city)
-    
+        result, time_taken = measure_algorithm(
+            algorithm, graph, start_city, goal_city)
+
     # Output results
     if result:
         if isinstance(result, tuple):
             path, cost_or_count = result[0], result[1]
-            print(f"{algorithm.__name__.upper()}: Path: {path}, Cost/Count: {cost_or_count}, Time: {time_taken:.4f} seconds")
+            print(
+                f"{algorithm.__name__.upper()}: Path: {path}, Cost/Count: {cost_or_count}, Time: {time_taken:.4f} seconds")
         else:
-            print(f"{algorithm.__name__.upper()}: Path: {result}, Time: {time_taken:.4f} seconds")
+            print(
+                f"{algorithm.__name__.upper()}: Path: {result}, Time: {time_taken:.4f} seconds")
     else:
         print(f"{algorithm.__name__.upper()}: No path found.")
